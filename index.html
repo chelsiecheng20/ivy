@@ -54,7 +54,10 @@ header .cta{padding:11px 20px;font-size:14px}
 .ba p{font-size:15px;line-height:1.8;color:var(--body);margin-top:8px}
 .ba .after p{color:var(--ink);font-weight:500}
 .stage{position:sticky;top:var(--hdr);height:clamp(600px,calc(100vh - var(--hdr)),960px)}
-.obj{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);will-change:transform,opacity;filter:drop-shadow(0 30px 40px rgba(80,40,50,.18));pointer-events:none}
+.obj{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);will-change:transform,opacity,filter;filter:drop-shadow(0 30px 40px rgba(80,40,50,.18));pointer-events:none}
+.stat{position:absolute;left:8%;bottom:16%;z-index:2;display:flex;flex-direction:column;gap:2px;padding:18px 24px;border-radius:20px;background:rgba(248,243,239,.92);box-shadow:0 18px 40px -18px rgba(80,40,50,.35);opacity:0;will-change:transform,opacity;pointer-events:none}
+.stat b{font-family:'Bodoni Moda','Noto Serif TC',serif;font-weight:500;font-size:44px;line-height:1.1;color:var(--rose);font-variant-numeric:lining-nums}
+.stat span{font-size:13px;color:var(--mute);letter-spacing:.06em}
 #o0{height:70%}#o1{height:62%;opacity:0}#o2{width:58%;opacity:0}
 .dots{position:absolute;left:50%;bottom:36px;transform:translateX(-50%);display:flex;gap:8px;padding:6px;border-radius:999px;background:rgba(248,243,239,.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
 .dots a{white-space:nowrap;padding:8px 16px;border-radius:999px;font-size:13px;font-weight:500;color:var(--mute);transition:background-color .3s,color .3s}
@@ -76,6 +79,8 @@ section.block{padding-top:128px;padding-bottom:128px}
 .card{background:var(--ivory);border-radius:24px}
 .items{padding:8px 32px}
 .item+.item{border-top:1px solid rgba(42,30,33,.1)}
+.grp{font-size:13px;font-weight:500;letter-spacing:.12em;color:var(--rose);padding:28px 0 4px}
+.item+.grp{border-top:1px solid rgba(42,30,33,.1);margin-top:0;padding-top:32px}
 .item-btn{width:100%;display:grid;grid-template-columns:64px 1fr auto 40px;align-items:center;gap:20px;padding:26px 0}
 .no{font-size:22px;color:var(--rose)}
 .gift{font-size:12px;font-weight:500;padding:6px 12px;border-radius:999px;background:#F1DCE0;color:#7E2F42}
@@ -93,9 +98,19 @@ section.block{padding-top:128px;padding-bottom:128px}
 
 #price{background:#EEDFDC}
 .total{font-family:'Bodoni Moda',serif;font-weight:500;font-size:72px;line-height:1.05;font-variant-numeric:lining-nums tabular-nums}
-.incl{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;padding:36px}
-.incl h3{margin:0;padding-bottom:14px;font-size:18px}
-.incl li{font-size:14px;line-height:1.7;padding:12px 0;border-top:1px solid rgba(42,30,33,.12)}
+.was{font-family:'Bodoni Moda',serif;font-size:30px;color:var(--mute);text-decoration:line-through;text-decoration-thickness:1.5px;font-variant-numeric:lining-nums}
+.p-left{position:sticky;top:calc(var(--hdr) + 40px)}
+.save{font-size:16px;font-weight:500;color:var(--rose)}
+.math{padding:36px 40px}
+.math .grp-t{font-size:13px;font-weight:500;letter-spacing:.12em;color:var(--rose);padding:0 0 6px}
+.math .grp-t.bonus{margin-top:28px}
+.math .row{display:flex;justify-content:space-between;align-items:baseline;gap:24px;padding:16px 0;border-top:1px solid rgba(42,30,33,.1)}
+.math .row b{font-weight:500;font-size:16px;line-height:1.6}
+.math .row small{display:block;font-size:13px;color:var(--mute);line-height:1.6;margin-top:2px}
+.math .row span.v{font-weight:500;font-size:16px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.math .sum{display:flex;justify-content:space-between;align-items:baseline;gap:24px;margin-top:20px;padding-top:22px;border-top:1.5px solid var(--ink)}
+.math .sum b{font-size:15px;font-weight:700;letter-spacing:.06em}
+.math .sum span{font-family:'Bodoni Moda',serif;font-size:30px;font-variant-numeric:lining-nums tabular-nums}
 
 #talk{background:var(--ink);color:var(--ivory);padding-top:128px;padding-bottom:48px}
 footer{margin-top:96px;padding-top:20px;border-top:1px solid rgba(248,243,239,.15);display:flex;justify-content:space-between;gap:24px;font-size:12px;line-height:1.7;color:#B8A9AC}
@@ -108,17 +123,20 @@ footer{margin-top:96px;padding-top:20px;border-top:1px solid rgba(248,243,239,.1
   .stage{order:-1;top:var(--hdr);height:42vh;min-height:280px;z-index:3;background:var(--bg,#F8F3EF);transition:background-color .9s;margin:0 -20px;box-shadow:0 12px 20px -16px rgba(42,30,33,.25)}
   #o0,#o1,#o2{top:44%}
   #o0{height:82%}#o1{height:78%}#o2{width:62%}
+  .stat{left:20px;bottom:24%;padding:10px 16px;border-radius:14px}.stat b{font-size:28px}.stat span{font-size:12px}
   .dots{bottom:10px}
   .chap{min-height:auto;padding:56px 0}
   .chap h1{font-size:34px}.chap h2{font-size:28px}
   h2.sec{font-size:30px}
   .two,.acc-body,.item-body,.pts{grid-template-columns:1fr;gap:24px}
+  .two{grid-template-columns:1fr!important}
+  .p-left{position:static}
   .acc-body,.item-body{padding-left:12px;padding-right:12px}
   .items{padding:4px 18px}
-  .item-btn{grid-template-columns:44px 1fr 36px}.item-btn .gift{display:none}
+  .item-btn{grid-template-columns:44px 1fr 36px}.item-btn .gift,.item-btn>span:empty{display:none}
   .deliver{grid-template-columns:1fr 1fr}
   .deliver>span:first-child{grid-column:1/-1}
-  .incl{grid-template-columns:1fr;padding:24px}
+  .math{padding:24px 20px}.math .row b,.math .row span.v{font-size:15px}
   .total{font-size:52px}
   section.block{padding-top:88px;padding-bottom:88px}
   .talk-grid{grid-template-columns:1fr!important}
@@ -137,7 +155,7 @@ footer{margin-top:96px;padding-top:20px;border-top:1px solid rgba(248,243,239,.1
   <nav>
     <a class="ul" href="#case-1">案例</a>
     <a class="ul" href="#stuck">現在卡在哪</a>
-    <a class="ul" href="#plan">三段服務</a>
+    <a class="ul" href="#plan">服務內容</a>
     <a class="ul" href="#when">時程</a>
     <a class="ul" href="#price">費用</a>
   </nav>
@@ -175,8 +193,8 @@ footer{margin-top:96px;padding-top:20px;border-top:1px solid rgba(248,243,239,.1
 <section id="stuck" class="block wrap" style="border-top:1px solid rgba(42,30,33,.08)">
   <div class="two">
     <div style="display:flex;flex-direction:column;gap:20px">
-      <h2 class="serif sec">Mika 現在最卡的，<br>是哪一個？</h2>
-      <p class="lead" style="max-width:380px">選一個最有感的，右邊會告訴你我建議從哪裡開始。不用全部都做。</p>
+      <h2 class="serif sec">招募這條路，<br>Mika 卡在哪一段？</h2>
+      <p class="lead" style="max-width:380px">點開最有感的那一個，看看 90 天計畫怎麼處理它。</p>
     </div>
     <div class="acc" id="probs"></div>
   </div>
@@ -185,10 +203,10 @@ footer{margin-top:96px;padding-top:20px;border-top:1px solid rgba(248,243,239,.1
 <section id="plan" class="block wrap">
   <div class="plan-head">
     <div style="display:flex;flex-direction:column;gap:16px">
-      <h2 class="serif sec">三段服務，只挑你需要的</h2>
-      <p class="lead" style="max-width:520px">先健檢、再客製。每一段都可以單獨做，也可以串成完整的 90 天。</p>
+      <h2 class="serif sec">90 天招商陪跑計畫</h2>
+      <p class="lead" style="max-width:520px">核心方案包含「諮詢陪跑」與「招商系統」，90 天一次到位。自媒體建置為選配加購，依需求另計。</p>
     </div>
-    <div class="seg" role="tablist" aria-label="服務階段" id="stages"></div>
+    <div class="seg" role="tablist" aria-label="方案內容" id="stages"></div>
   </div>
   <p class="serif fade" id="stage-sub" style="margin-bottom:24px;font-size:20px;font-weight:500;color:var(--rose)"></p>
   <div class="card items" id="items"></div>
@@ -216,20 +234,17 @@ footer{margin-top:96px;padding-top:20px;border-top:1px solid rgba(248,243,239,.1
 
 <section id="price" class="block wrap">
   <div class="two" style="grid-template-columns:1fr 1.3fr;align-items:start">
-    <div style="display:flex;flex-direction:column;gap:28px">
+    <div class="p-left" style="display:flex;flex-direction:column;gap:28px">
       <h2 class="serif sec">獲客系統・招商陪跑</h2>
-      <div class="seg" role="group" aria-label="合作月數" id="plans" style="align-self:flex-start;flex-wrap:wrap"></div>
-      <div style="display:flex;flex-direction:column;gap:10px">
-        <span class="total" id="total"></span>
-        <span class="lead" style="font-size:15px" id="breakdown"></span>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <span class="lead" style="font-size:15px">總價值 <span class="was" id="p-was"></span></span>
+        <span class="total" id="p-now"></span>
+        <span class="save" id="p-save"></span>
       </div>
-      <p style="font-size:15px;line-height:1.9;padding:18px 20px;border-radius:16px;background:var(--ivory)">合約結束後，名單、素材和系統<strong>全部歸 Mika 所有</strong>，之後團隊可以直接沿用。</p>
+      <p class="lead" style="font-size:14px" id="p-alt"></p>
+      <p style="font-size:15px;line-height:1.9;padding:18px 20px;border-radius:16px;background:var(--ivory)">合約結束後，名單、素材和系統<strong>全部歸 <span class="client"></span> 所有</strong>，之後團隊可以直接沿用。</p>
     </div>
-    <div class="card incl">
-      <div><h3 class="serif">顧問服務</h3><ul><li>客製化專屬諮詢（已贈送）</li><li>全方位現況健檢與盤點</li><li>手把手 90 天 1 對 1 陪跑</li><li>LINE 即時討論</li></ul></div>
-      <div><h3 class="serif">代操服務</h3><ul><li>陌生名單開發</li><li>實際執行招商觸及</li><li>A/B 測試、滾動式優化</li><li>定期數據報告</li></ul></div>
-      <div><h3 class="serif">工具包</h3><ul><li>Landing page 網站建置</li><li>招商素材工具包</li><li>自動化私訊回覆工具</li><li>私域成交 SOP</li><li>陌生名單成交</li></ul></div>
-    </div>
+    <div class="card math" id="p-math"></div>
   </div>
 </section>
 
@@ -239,8 +254,7 @@ footer{margin-top:96px;padding-top:20px;border-top:1px solid rgba(248,243,239,.1
       <h2 class="serif" style="font-size:44px;line-height:1.45">先聊 30 分鐘，<br>不適合就不用買。</h2>
       <p style="font-size:16px;line-height:1.95;color:#D9CCCF;max-width:540px">五年品牌培訓與內容創作經驗，陪 30+ 商家透過自媒體獲客、100+ 個人 IP 變現。專做女性市場，也專做沒有行銷部、但很認真做生意的品牌。</p>
       <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
-        <a class="btn" href="https://www.instagram.com/__chen.zh/" target="_blank" rel="noopener" style="background:var(--ivory);color:var(--ink)">IG 私訊 @__chen.zh</a>
-        <span style="padding:16px 24px;border-radius:999px;border:1px solid rgba(248,243,239,.3);font-size:15px">LINE：[你的 LINE ID]</span>
+        <a class="btn" href="https://line.me/ti/p/JNRjmBha9R" target="_blank" rel="noopener" style="background:var(--ivory);color:var(--ink)">LINE：Happytree11</a>
       </div>
     </div>
     <div style="display:flex;flex-direction:column;gap:4px;font-size:14px;color:#D9CCCF;line-height:1.8">
@@ -251,7 +265,6 @@ footer{margin-top:96px;padding-top:20px;border-top:1px solid rgba(248,243,239,.1
   </div>
   <footer>
     <span>© 2026 Chelsie</span>
-    <span>圖片皆為示意：花束 Unsplash（CC0，經 Wikimedia Commons）、精華油 Mary Kay 台灣官網、內衣 ROSE IS A ROSE 商品圖。正式上線前請替換或取得授權。</span>
     <a class="ul" href="#top">回到頂端 ↑</a>
   </footer>
 </section>
@@ -264,9 +277,9 @@ footer{margin-top:96px;padding-top:20px;border-top:1px solid rgba(248,243,239,.1
 
   /* ---------- story chapters ---------- */
   var CASES = [
-    { id:'case-1', tag:'案例一・一人花店 @台南花藝', title:'從門市冷清，到一人公司千萬營收。', before:['仰賴實體門市線下銷售，來客數慘淡。','高客單價產品，路過客的轉換率很低。'], after:['用自媒體建立品牌定調，網路客超過八成。','官網預訂到取貨，整個銷售流程系統化。'] },
-    { id:'case-2', tag:'案例二・個人 IP @直銷 Mary Kay', title:'撕掉直銷標籤，成為被信任的創作者。', before:['大量陌生開發，賣貨像在推銷。','短影音誇大功效，差點被衛生局開罰。'], after:['客人自己上門，諮詢留言回覆不完。','分享生活與興趣，穩定被動變現六位數。'] },
-    { id:'case-3', tag:'案例三・零售通路品牌 @內著品牌', title:'不再只是開架內衣，省下百萬廣告預算。', before:['純產品販售，沒有品牌辨識度。','業績起伏全看促銷和廣告。'], after:['KOL 團購邀約，單週平均業績六位數。','從零售通路走進品牌經營。'] }
+    { id:'case-1', tag:'案例一・一人花店 @台南花藝', title:'從門市冷清，到一人公司千萬營收。', before:['仰賴實體門市線下銷售，來客數慘淡。','高客單價產品，路過客的轉換率很低。'], after:['用自媒體建立品牌定調，網路客超過八成。','官網預訂到取貨，整個銷售流程系統化。'], stat:{ n:'8 成+', l:'網路客占比' } },
+    { id:'case-2', tag:'案例二・個人 IP @直銷 Mary Kay', title:'撕掉直銷標籤，成為被信任的創作者。', before:['大量陌生開發，賣貨像在推銷。','短影音誇大功效，差點被衛生局開罰。'], after:['客人自己上門，諮詢留言回覆不完。','分享生活與興趣，穩定被動變現六位數。'], stat:{ n:'6 位數', l:'穩定被動變現' } },
+    { id:'case-3', tag:'案例三・零售通路品牌 @內著品牌', title:'不再只是開架內衣，省下百萬廣告預算。', before:['純產品販售，沒有品牌辨識度。','業績起伏全看促銷和廣告。'], after:['KOL 團購邀約，單週平均業績六位數。','從零售通路走進品牌經營。'], stat:{ n:'單週 6 位數', l:'KOL 團購業績' } }
   ];
   var chapsEl = $('#chaps');
   CASES.forEach(function(c){
@@ -280,9 +293,16 @@ footer{margin-top:96px;padding-top:20px;border-top:1px solid rgba(248,243,239,.1
   var chaps = document.querySelectorAll('.chap');
   var story = $('#story');
   var objs = [$('#o0'), $('#o1'), $('#o2')];
+  var stageEl = $('.stage');
+  var stats = CASES.map(function(c){
+    var el = document.createElement('div'); el.className = 'stat';
+    el.innerHTML = '<b>'+esc(c.stat.n)+'</b><span>'+esc(c.stat.l)+'</span>';
+    stageEl.appendChild(el); return el;
+  });
   var dots = document.querySelectorAll('.dots a');
   var BG = ['#F8F3EF','#F6E7DF','#F2E8EC','#EFE0DD'];
   var C = [0.5, 2, 3], W = [0.75, 0.3, 0.35], BASE = [-8, 0, 0];
+  var K = [1, 2, 3]; // 每個物件對應的案例章節（用於灰→彩、成果數字）
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var cur = -1, raf = 0;
 
@@ -305,10 +325,17 @@ footer{margin-top:96px;padding-top:20px;border-top:1px solid rgba(248,243,239,.1
     for (var i = 0; i < 3; i++){
       var d = p - C[i];
       var op = Math.min(1, Math.max(0, 1 - (Math.abs(d) - W[i]) / 0.3));
-      var rot = reduce ? BASE[i] : BASE[i] + d * -55;
+      var rot = reduce ? BASE[i] : BASE[i] + d * -18;
       var ty = reduce ? 0 : d * -90;
       var sc = 1 - Math.min(Math.abs(d), 1) * 0.12;
       objs[i].style.opacity = op.toFixed(3);
+      // 之前 → 之後：進入案例時灰階，讀到案例中段時轉為全彩
+      var g = Math.min(1, Math.max(0, 1 - Math.abs(p - (K[i] - 0.45)) / 0.35));
+      objs[i].style.filter = 'grayscale('+g.toFixed(3)+') brightness('+(1 - g*0.06).toFixed(3)+') drop-shadow(0 30px 40px rgba(80,40,50,.18))';
+      // 成果數字：全彩後浮現
+      var so = Math.min(1, Math.max(0, 1 - Math.abs(p - K[i]) / 0.3));
+      stats[i].style.opacity = so.toFixed(3);
+      stats[i].style.transform = 'translateY('+(reduce ? 0 : (1 - so) * 16 + (p - K[i]) * -40).toFixed(1)+'px)';
       objs[i].style.transform = 'translate(-50%, calc(-50% + '+ty.toFixed(1)+'px)) rotate('+rot.toFixed(2)+'deg) scale('+sc.toFixed(3)+')';
     }
     var ch = Math.round(p);
@@ -326,16 +353,16 @@ footer{margin-top:96px;padding-top:20px;border-top:1px solid rgba(248,243,239,.1
 
   /* ---------- problems ---------- */
   var PROBS = [
-    { t:'線上招募卡關', d:'貼文、限動都發了，問的人很多，真正加入的很少。', fix:'招商系統', stage:'B', open:'b1', fixd:'一頁式網站把「賣什麼、怎麼加入、能賺多少」一次講清楚，再主動找到市場上活躍的團媽。' },
-    { t:'沒有品牌，只能比價', d:'貨很好，但大家只看價格。別家便宜五塊，團媽就走了。', fix:'自媒體建置', stage:'C', open:'c1', fixd:'把十年口碑變成看得見的品牌：貼文模板、限動行事曆、專屬 AI 內容顧問。' },
-    { t:'招募沒有系統', d:'每個新人都要從頭教，流程都在腦袋裡，沒辦法交給別人。', fix:'諮詢陪跑', stage:'A', open:'a3', fixd:'自動化私訊回覆加上私域成交 SOP，90 天專人陪你跑順，之後團隊也能自己接手。' }
+    { t:'線上招募卡關', d:'貼文、限動都發了，問的人很多，真正加入的很少。', fix:'建議從「招商系統」開始', stage:'core', open:'b1', fixd:'一頁式網站把「賣什麼、怎麼加入、能賺多少」一次講清楚，再主動找到市場上活躍的團媽。' },
+    { t:'招募沒有系統', d:'每個新人都要從頭教，流程都在腦袋裡，沒辦法交給別人。', fix:'建議從「諮詢陪跑」開始', stage:'core', open:'a3', fixd:'自動化私訊回覆加上私域成交 SOP，90 天專人陪你跑順，之後團隊也能自己接手。' },
+    { t:'沒有品牌，只能比價', d:'貨很好，但大家只看價格。別家便宜五塊，團媽就走了。', fix:'建議加購「自媒體建置」', stage:'addon', open:'c1', fixd:'把十年口碑變成看得見的品牌：貼文模板、限動行事曆、專屬 AI 內容顧問。' }
   ];
   var prob = 0;
   function renderProbs(){
     $('#probs').innerHTML = PROBS.map(function(p, i){
       var on = prob === i;
       return '<div class="'+(on?'on':'')+'"><button class="acc-btn" data-i="'+i+'" aria-expanded="'+on+'"><span class="dot"></span><span class="serif acc-t">'+esc(p.t)+'</span><span style="font-size:22px;color:var(--mute)">'+(on?'−':'+')+'</span></button>' +
-        (on ? '<div class="acc-body fade"><p style="color:var(--mute)">「'+esc(p.d)+'」</p><div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start"><p>'+esc(p.fixd)+'</p><a class="ul go" href="#plan" data-i="'+i+'" style="font-weight:500;color:var(--rose)">建議從「'+esc(p.fix)+'」開始 →</a></div></div>' : '') + '</div>';
+        (on ? '<div class="acc-body fade"><p style="color:var(--mute)">「'+esc(p.d)+'」</p><div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start"><p>'+esc(p.fixd)+'</p><a class="ul go" href="#plan" data-i="'+i+'" style="font-weight:500;color:var(--rose)">'+esc(p.fix)+' →</a></div></div>' : '') + '</div>';
     }).join('');
   }
   $('#probs').addEventListener('click', function(e){
@@ -347,27 +374,29 @@ footer{margin-top:96px;padding-top:20px;border-top:1px solid rgba(248,243,239,.1
 
   /* ---------- plan ---------- */
   var STAGES = {
-    A:{ name:'諮詢陪跑', sub:'先看清楚現況，再決定要做什麼。', items:[
-      { id:'a1', no:'01', t:'健檢諮詢', gift:true, short:'第一次通話，盤點目前團媽招募的現況和營運架構，找出真正卡住的那一段。', pts:['招募現況盤點','營運架構檢視','找出卡關點','首次通話完成'] },
-      { id:'a2', no:'02', t:'客製化專屬簡報', gift:true, short:'依 Mika 的競爭優勢和受眾行為，整理成一份符合市場趨勢的解法。', pts:['競爭優勢分析','受眾行為','市場趨勢','具體解法'] },
-      { id:'a3', no:'05', t:'90 天專人線上對接', gift:false, short:'建立 LINE 專案群組、指派專人，每週或雙週對齊目標、同步進度和數據；每月一次視訊策略會議，一路滾動調整。', pts:['LINE 專案群組','每週／雙週對齊','每月策略會議','數據即時討論'] } ]},
-    B:{ name:'招商系統', sub:'把十年口碑，變成會自己運作的招募流程。', items:[
-      { id:'b1', no:'03', t:'Landing page 一頁式網站', gift:false, short:'清楚呈現批發品項、營運機制、如何加入和平台優勢。潛在團媽自己先看懂，省下重複講解的時間。', pts:['批發品項與機制','如何加入','匿名團媽真實故事','自動化招商簡介'] },
-      { id:'b2', no:'04', t:'招商陌生開發', gift:false, short:'用獨家數據篩選活躍、高潛力的團媽，搭配自動化私訊回覆和主動邀約模板。精準鎖定，不亂槍打鳥。', pts:['高潛力名單篩選','自動化私訊回覆','邀約信件模板','省下小編人力'] } ]},
-    C:{ name:'自媒體建置', sub:'建立信任感，讓社群 24 小時替你招募。', items:[
-      { id:'c1', no:'06', t:'Reels 與貼文模板', gift:false, short:'個人或商家 IP 的主題定位、腳本結構、文案和 CTA 框架。可以直接複製使用，不用從零研究。', pts:['主題定位','腳本結構','文案與 CTA 框架','永久使用權'] },
-      { id:'c2', no:'07', t:'招商型限動行事曆', gift:false, short:'系統化的限動模板與獲客 SOP：題材、比例、週期、互動都排好，主動和被動引流一起進行。', pts:['限動模板','獲客 SOP','主動＋被動引流','專屬動態設計'] },
-      { id:'c3', no:'08', t:'AI 專屬內容顧問', gift:false, short:'為 Mika 團隊打造專屬 GPT，依定位、語氣和風格給內容建議，團媽也能一起使用。', pts:['專屬 GPT','個人化語氣','團隊共用','永久使用權'] } ]}
+    core:{ name:'核心方案', sub:'把十年口碑，變成會自己運作的招募流程。', items:[
+      { id:'a1', group:'諮詢陪跑', no:'01', t:'健檢諮詢', gift:true, short:'第一次通話，盤點目前團媽招募的現況和營運架構，找出真正卡住的那一段。', pts:['招募現況盤點','營運架構檢視','找出卡關點','首次通話完成'] },
+      { id:'a2', group:'諮詢陪跑', no:'02', t:'客製化專屬簡報', gift:true, short:'依 Mika 的競爭優勢和受眾行為，整理成一份符合市場趨勢的解法。', pts:['競爭優勢分析','受眾行為','市場趨勢','具體解法'] },
+      { id:'a3', group:'諮詢陪跑', no:'03', t:'90 天專人線上對接', gift:false, short:'建立 LINE 專案群組、指派專人，每週或雙週對齊目標、同步進度和數據；每月一次視訊策略會議，一路滾動調整。', pts:['LINE 專案群組','每週／雙週對齊','每月策略會議','數據即時討論'] },
+      { id:'b1', group:'招商系統', no:'04', t:'Landing page 一頁式網站', gift:false, short:'清楚呈現批發品項、營運機制、如何加入和平台優勢。潛在團媽自己先看懂，省下重複講解的時間。', pts:['批發品項與機制','如何加入','匿名團媽真實故事','自動化招商簡介'] },
+      { id:'b2', group:'招商系統', no:'05', t:'招商陌生開發', gift:false, short:'用獨家數據篩選活躍、高潛力的團媽，搭配自動化私訊回覆和主動邀約模板。精準鎖定，不亂槍打鳥。', pts:['高潛力名單篩選','自動化私訊回覆','邀約信件模板','省下小編人力'] } ]},
+    addon:{ name:'選配加購・另計', sub:'建立信任感，讓社群 24 小時替你招募。依需求加購，費用另計。', items:[
+      { id:'c1', no:'06', t:'Reels 與貼文模板', gift:false, extra:true, short:'個人或商家 IP 的主題定位、腳本結構、文案和 CTA 框架。可以直接複製使用，不用從零研究。', pts:['主題定位','腳本結構','文案與 CTA 框架','永久使用權'] },
+      { id:'c2', no:'07', t:'招商型限動行事曆', gift:false, extra:true, short:'系統化的限動模板與獲客 SOP：題材、比例、週期、互動都排好，主動和被動引流一起進行。', pts:['限動模板','獲客 SOP','主動＋被動引流','專屬動態設計'] },
+      { id:'c3', no:'08', t:'AI 專屬內容顧問', gift:false, extra:true, short:'為 Mika 團隊打造專屬 GPT，依定位、語氣和風格給內容建議，團媽也能一起使用。', pts:['專屬 GPT','個人化語氣','團隊共用','永久使用權'] } ]}
   };
-  var stage = 'B', open = 'b1';
+  var stage = 'core', open = 'a1';
   function renderPlan(){
-    $('#stages').innerHTML = ['A','B','C'].map(function(k){
-      return '<button role="tab" data-k="'+k+'" aria-selected="'+(stage===k)+'">'+k+'・'+STAGES[k].name+'</button>';
+    $('#stages').innerHTML = Object.keys(STAGES).map(function(k){
+      return '<button role="tab" data-k="'+k+'" aria-selected="'+(stage===k)+'">'+STAGES[k].name+'</button>';
     }).join('');
     var sub = $('#stage-sub'); sub.textContent = STAGES[stage].sub; sub.classList.remove('fade'); void sub.offsetWidth; sub.classList.add('fade');
+    var lastGroup = '';
     $('#items').innerHTML = STAGES[stage].items.map(function(it){
       var on = open === it.id;
-      return '<div class="item'+(on?' open':'')+'"><button class="item-btn" data-id="'+it.id+'" aria-expanded="'+on+'"><span class="it no">'+it.no+'</span><span class="serif" style="font-size:22px">'+esc(it.t)+'</span>'+(it.gift?'<span class="gift">首次諮詢贈送</span>':'<span></span>')+'<span class="plus">+</span></button>' +
+      var head = '';
+      if (it.group && it.group !== lastGroup){ head = '<div class="grp">'+esc(it.group)+'</div>'; lastGroup = it.group; }
+      return head + '<div class="item'+(on?' open':'')+'"><button class="item-btn" data-id="'+it.id+'" aria-expanded="'+on+'"><span class="it no">'+it.no+'</span><span class="serif" style="font-size:22px">'+esc(it.t)+'</span>'+(it.gift?'<span class="gift">首次諮詢贈送</span>':it.extra?'<span class="gift" style="background:transparent;border:1px solid rgba(42,30,33,.3);color:var(--mute)">另計</span>':'<span></span>')+'<span class="plus">+</span></button>' +
         (on ? '<div class="item-body fade"><p style="font-size:16px;line-height:1.95;color:var(--body)">'+esc(it.short)+'</p><ul class="pts">'+it.pts.map(function(t){return '<li>'+esc(t)+'</li>';}).join('')+'</ul></div>' : '') + '</div>';
     }).join('');
   }
@@ -390,16 +419,43 @@ footer{margin-top:96px;padding-top:20px;border-top:1px solid rgba(248,243,239,.1
   }
   $('#months').addEventListener('click', function(e){ var b = e.target.closest('button'); if (!b) return; mon = +b.dataset.i; renderMonths(); });
 
-  /* ---------- price ---------- */
-  var months = 3;
+  /* ---------- price ----------
+     換客戶時只要改這裡：客戶名稱、方案價格、價值明細 */
+  var PRICE = {
+    client: 'Mika',
+    now: 270000,
+    alt: '首月啟動 NT$100,000，續月每月 NT$85,000',
+    groups: [
+      { t:'核心方案', rows:[
+        { t:'90 天 1 對 1 滾動式優化陪跑', v:150000 },
+        { t:'LINE 即時討論・專屬策略', v:50000 },
+        { t:'精準團媽名單', s:'名單持續帶來業績', v:80000 },
+        { t:'招商代操執行', s:'實際執行招商觸及・主動邀約・陌生名單成交', v:100000 },
+        { t:'高轉換招募 Landing page', v:60000 },
+        { t:'私域開發系統', s:'私域成交 SOP・自動化私訊回覆工具', v:50000 },
+        { t:'招募貼文模組', v:35000 } ]},
+      { t:'加贈', bonus:true, rows:[
+        { t:'全方位現況健檢與盤點', v:18000 },
+        { t:'客製化專屬策略簡報', v:15000 },
+        { t:'定期數據報告', v:9000 } ]}
+    ]
+  };
+  function nt(n){ return 'NT$' + n.toLocaleString('en-US'); }
   function renderPrice(){
-    $('#plans').innerHTML = [1,2,3].map(function(n){
-      return '<button data-n="'+n+'" aria-pressed="'+(months===n)+'">'+(n===3?'3 個月（完整 90 天）':n+' 個月')+'</button>';
-    }).join('');
-    $('#total').textContent = 'NT$' + (100000 + 85000 * (months - 1)).toLocaleString('en-US');
-    $('#breakdown').textContent = months === 1 ? '首月啟動價。' : '首月啟動價 NT$100,000，加上第 2' + (months === 3 ? '–3' : '') + ' 個月每月 NT$85,000。';
+    var total = 0;
+    $('#p-math').innerHTML = PRICE.groups.map(function(g){
+      return '<div class="grp-t'+(g.bonus?' bonus':'')+'">'+esc(g.t)+'</div>' + g.rows.map(function(r){
+        total += r.v;
+        return '<div class="row"><b>'+esc(r.t)+(r.s?'<small>'+esc(r.s)+'</small>':'')+'</b><span class="v">'+nt(r.v)+'</span></div>';
+      }).join('');
+    }).join('') + '<div class="sum"><b>總價值</b><span>'+nt(total)+'</span></div>';
+    var save = total - PRICE.now, off = Math.round(PRICE.now / total * 100) / 10;
+    $('#p-was').textContent = nt(total);
+    $('#p-now').textContent = nt(PRICE.now);
+    $('#p-save').textContent = '90 天完整方案・現省 ' + nt(save) + '（約 ' + off + ' 折）';
+    $('#p-alt').textContent = PRICE.alt;
+    document.querySelectorAll('.client').forEach(function(el){ el.textContent = PRICE.client; });
   }
-  $('#plans').addEventListener('click', function(e){ var b = e.target.closest('button'); if (!b) return; months = +b.dataset.n; renderPrice(); });
 
   renderProbs(); renderPlan(); renderMonths(); renderPrice();
 })();
